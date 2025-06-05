@@ -162,9 +162,7 @@ class StatusMonitor:
 
 def main():
     TELEGRAM_BOT_TOKEN = os.environ.get('TELEGRAM_BOT_TOKEN')  # Get from @BotFather
-    # TELEGRAM_BOT_TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')  # Get from @BotFather
     TELEGRAM_CHAT_ID = os.environ.get('TELEGRAM_CHAT_ID')     # Your Telegram chat ID
-    # TELEGRAM_CHAT_ID = os.getenv('TELEGRAM_CHAT_ID')     # Your Telegram chat ID
     
     # Validate configuration
     if TELEGRAM_BOT_TOKEN == "YOUR_BOT_TOKEN_HERE" or TELEGRAM_CHAT_ID == "YOUR_CHAT_ID_HERE":
