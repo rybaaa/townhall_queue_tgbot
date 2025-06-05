@@ -7,7 +7,7 @@ from datetime import datetime
 import urllib3
 from dotenv import load_dotenv
 
-load_dotenv()
+# load_dotenv()
 
 # Disable SSL warnings since we're bypassing SSL verification for the government website
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
