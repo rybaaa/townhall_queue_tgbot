@@ -81,18 +81,18 @@ class StatusMonitor:
                 logging.warning(f"Queue with ID {self.target_queue_id} not found in Wrocław")
                 return False, ""
             
-            # Check if ticket_count > 0
-            ticket_count = target_queue.get('ticket_count', 0)
+            # Check if tickets_left > 0
+            ticket_count = target_queue.get('tickets_left', 0)
             queue_name = target_queue.get('name', 'Unknown Queue')
             
             if ticket_count > 0:
                 current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
                 message = f"🎫 Currently there are {ticket_count} tickets available for '{queue_name}' at {current_time}"
                 return True, message
-            else:
-                current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-                message = f"🎫 Currently there are {ticket_count} tickets available for '{queue_name}' at {current_time}"
-                return True, message
+            # else:
+            #     current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            #     message = f"🎫 Currently there are {ticket_count} tickets available for '{queue_name}' at {current_time}"
+            #     return True, message
             
             # Log current status for debugging
             logging.info(f"Queue ID {self.target_queue_id} ('{queue_name}'): {ticket_count} tickets available")
